@@ -40,7 +40,7 @@ def load_precalculated_JK(proxy, case, nd_log, nJK = 5):
 _pairs_sim_cache = {}
 def load_sim_pair_count(proxy, case, nd_log, cumulative=False):
     key = (proxy, case, nd_log)
-    if key not in _pairs_cache:
+    if key not in _pairs_sim_cache:
         if os.path.isfile(filepath.path_sim_lowres_counts + '/pairs_{}/{}_nd{:.1f}_run0.npy'.format(*key)):
             _pairs_sim_cache[key] = np.load(filepath.path_sim_lowres_counts + 'pairs_{}/{}_nd{:.1f}_run0.npy'.format(*key)).astype(float)      
         else:
